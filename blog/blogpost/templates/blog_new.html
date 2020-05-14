@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+      <form action="{% url 'create_blog' %}" method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleInputEmail1">TITLE</label>
+            <input class="form-control" name="title" />
+          </div>
+          <div class="form-group">
+          <label for="exampleInputEmail1">CONTENT</label>
+          <input class="form-control" name="content" />
+          </div>
+          <input type="submit" class="btn btn-primary" value="Submit">
+          <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+      </form>
+  </div>
+{% endblock %}
